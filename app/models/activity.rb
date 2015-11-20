@@ -1,2 +1,3 @@
 class Activity < ActiveRecord::Base
-end
+  has_many :comments, as: :commentable
+end #Activity

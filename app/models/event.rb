@@ -1,2 +1,3 @@
 class Event < ActiveRecord::Base
-end
+  has_many :comments, as: :commentable
+end #Event
