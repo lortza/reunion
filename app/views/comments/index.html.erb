@@ -1,0 +1,9 @@
+<h1>All Comments</h1>
+
+<% @comments.each do |comment| %>
+  <p><%= comment.name %> says (<%= time_ago_in_words(comment.created_at) %>): </p>
+    <p>"<%= comment.comment %>"</p>
+
+<% end %>
+
+<%= link_to "New Comment", [:new, @commentable, :comment] %>

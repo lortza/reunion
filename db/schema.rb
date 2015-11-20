@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20151120020728) do
     t.datetime "updated_at",       null: false
   end
 
+  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
+
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.date     "date"

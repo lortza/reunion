@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h2>
   <%= @event.name %>
-</p>
+</h2>
 
 <p>
   <strong>Date:</strong>
@@ -19,51 +18,29 @@
   <strong>End time:</strong>
   <%= @event.end_time %>
 </p>
-
 <p>
-  <strong>Venue:</strong>
-  <%= @event.venue %>
-</p>
-
-<p>
-  <strong>Street address:</strong>
-  <%= @event.street_address %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @event.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @event.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @event.zip %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @event.website %>
+  <strong>Location:</strong> <br>
+  <%= @event.venue %> <br>
+  <%= @event.street_address %> <br>
+  <%= @event.city %>, <%= @event.state %> <%= @event.zip %> <br>
+  <%= link_to @event.website, @event.website, :target => "_blank" %>
 </p>
 
 <p>
   <strong>Description:</strong>
   <%= @event.description %>
 </p>
-
 <hr>
-<h2>Comments</h2>
 
-  <% @event.comments.order("created_at DESC").each do |comment| %>
-    <%= render :partial => "comments/comment", :object=> comment %>
-  <% end %>
-
-<%= link_to "Leave a Comment", new_comment_path %>
-
+<h3>Comments</h3>
+<%= render "comments/comment" %>
 <hr>
+
+<h3>Leave a Comment</h3>
+<%= render "comments/form" %>
+<hr>
+
+<p>Buttons for this Event: 
 <%= link_to 'Edit Event', edit_event_path(@event) %> |
 <%= link_to 'All Events', events_path %>
+</p>

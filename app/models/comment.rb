@@ -1,3 +1,4 @@
 class Comment < ActiveRecord::Base
-  belongs_to :commentable, :polymorphic => true
+  # attr_accessible :name, :comment
+  belongs_to :commentable, polymorphic: true
 end #Comment
