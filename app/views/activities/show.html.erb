@@ -39,6 +39,17 @@
   <strong>Description:</strong>
   <%= @activity.description %>
 </p>
+<hr>
+<h2>Comments</h2>
 
+  <% @activity.comments.order("created_at DESC").each do |comment| %>
+    <%= render :partial => "comments/comment", :object=> comment %>
+  <% end %>
+
+<%= link_to "Leave a Comment", new_comment_path %>
+
+<h3>Leave a Comment</h3>
+<p>[form goes here]</p>
+<hr>
 <%= link_to 'Edit', edit_activity_path(@activity) %> |
 <%= link_to 'Back', activities_path %>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :activities
+  resources :comments
   resources :events
 
   root 'pages#home'

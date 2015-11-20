@@ -55,8 +55,15 @@
   <%= @event.description %>
 </p>
 
+<hr>
+<h2>Comments</h2>
 
-<%= render "comments/comments" %>
+  <% @event.comments.order("created_at DESC").each do |comment| %>
+    <%= render :partial => "comments/comment", :object=> comment %>
+  <% end %>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to "Leave a Comment", new_comment_path %>
+
+<hr>
+<%= link_to 'Edit Event', edit_event_path(@event) %> |
+<%= link_to 'All Events', events_path %>
