@@ -1,0 +1,10 @@
+<hr>
+<h2>Comments</h2>
+
+  <% @event.comments.each do |comment| %>
+    <p><%= comment.name %> says: </p>
+    <p>"<%= comment.comment %>"</p>
+
+  <% end %>
+
+<%= link_to "Leave a Comment", new_comment_path %>
