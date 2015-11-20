@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  resources :activities
-  resources :comments
-  resources :events
+
+  resources :activities do
+    resources :comments, :only => [:create, :destroy]
+  end
+  
+  resources :events do
+    resources :comments, :only => [:create, :destroy]
+  end
 
   root 'pages#home'
 
