@@ -43,7 +43,7 @@ Event.create!([
     venue: "Just Duck Tours",
     street_address: "501 Grant Street",
     city: "Pittsburgh",
-    state: "PA",
+    state: "Pennsylvania",
     zip: "15216",
     website: "http://website.com",
     description: 
@@ -60,7 +60,7 @@ Event.create!([
     venue: "Fallingwater",
     street_address: "1 Fallingwarer Place",
     city: "Rector",
-    state: "PA",
+    state: "Pennsylvania",
     zip: "16872",
     website: "http://website.com",
     description: 
@@ -76,7 +76,7 @@ Event.create!([
     venue: "Ohiopyle State Park",
     street_address: "1 Ohiopyle Drive",
     city: "Ohiopyle",
-    state: "PA",
+    state: "Pennsylvania",
     zip: "18276",
     website: "http://website.com",
     description: 
@@ -92,7 +92,7 @@ Event.create!([
     venue: "Mount Washington",
     street_address: "100 Lebo Lane",
     city: "Pittsburgh",
-    state: "PA",
+    state: "Pennsylvania",
     zip: "15216",
     website: "http://website.com",
     description: 
@@ -108,44 +108,49 @@ Activity.create!([
     venue: "Twin Lakes Park", 
     street_address: "5432 Twin Lakes Park Road",
     city: "Greensburg",
-    state: "PA",
+    state: "Pennsylvania",
     zip: "15601",
-    website: "http://website.com"
+    website: "http://website.com",
+    description: "Rent paddle boats or canoes and play in the small lake at Twin Lakes county park."
   },
   {
     name: "Fishing and Big Slide Park Day", 
     venue: "Mammoth Park",
     street_address: "123 Mammoth Drive",
     city: "Rector",
-    state: "PA",
+    state: "Pennsylvania",
     zip: "15672",
-    website: "http://website.com"
+    website: "http://website.com",
+    description: "Put on your big boys pants and slide down the monster slide that claimed many skinned knees and elbows of our childhood."
   },
   {
     name: "Paintball",
     venue: "Blast-o-Rama",
     street_address: "10492 Rt 30 East",
     city: "Greensburg",
-    state: "PA",
+    state: "Pennsylvania",
     zip: "15601",
-    website: "http://website.com"
+    website: "http://website.com",
+    description: "Go blast each other with pain balls. Super fun! Not for the faint of heart."
   },
   {
     name: "Clean out Ray's Garage",
     venue: "Ray's house",
     street_address: "102 Summerspring Lane",
     city: "Greensburg",
-    state: "PA",
+    state: "Pennsylvania",
     zip: "15601",
-    website: "http://website.com"
+    website: "http://website.com",
+    description: "Um, Ray's garage is a wreck and he needs help to move crap out of it and up to the curb."
   },
   {
     name: "Tax-Free Clothing Shopping",
     venue: "Westmoreland Mall",
     street_address: "300 South Greensburg Drive",
     city: "Greensburg",
-    state: "PA",
+    state: "Pennsylvania",
     zip: "15601",
-    website: "http://website.com"
+    website: "http://website.com",
+    description: "There's no tax on clothing in Pennsylvania, so go have a field day."
   }
   ])

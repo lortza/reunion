@@ -10,7 +10,15 @@ class ActivitiesController < ApplicationController
   # GET /activities/1
   # GET /activities/1.json
   def show
-  end
+    @activity = Activity.find(params[:id])
+    @commentable = @activity
+    @comments = @commentable.comments
+    @comment = Comment.new
+
+    @rsvpable = @activity
+    @rsvps = @rsvpable.rsvps
+    @rsvp = Rsvp.new
+  end #show
 
   # GET /activities/new
   def new

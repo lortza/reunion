@@ -10,6 +10,14 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @event = Event.find(params[:id])
+    @commentable = @event
+    @comments = @commentable.comments
+    @comment = Comment.new
+
+    @rsvpable = @event
+    @rsvps = @rsvpable.rsvps
+    @rsvp = Rsvp.new
   end
 
   # GET /events/new

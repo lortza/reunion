@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  resources :activities
-  resources :comments
-  resources :events
+
+  resources :activities do
+    resources :comments
+    resources :rsvps
+  end
+  
+  resources :events do
+    resources :comments
+    resources :rsvps
+  end
 
   root 'pages#home'
 
