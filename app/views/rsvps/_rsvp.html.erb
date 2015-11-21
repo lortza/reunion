@@ -3,7 +3,7 @@
   <div class="buttons">
          <%= link_to 'Delete', [@rsvpable, rsvp], method: :delete, data: { confirm: 'Are you sure you want to delete ' + rsvp.name + "'s rsvp? This action cannot be undone." } %>
   </div> <!-- buttons -->
-  <p><%= rsvp.name %> <em>(<%= rsvp.transportation %>)</em> </p>
+  <p><%= rsvp.name %><br> <span class="carpool">(<%= rsvp.transportation %>)</span></p>
     </div>  <!-- rsvp -->
 <% end %>
 

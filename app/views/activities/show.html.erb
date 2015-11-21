@@ -1,34 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<h2>
-  <%= @activity.name %>
-</h2>
-<%= link_to "Sign Up for #{@activity.name}", [:new, @rsvpable, :rsvp] %>
-<%= render "layouts/sidebar" %>
+<div class="col-xs-9">
+  <h2><%= @activity.name %></h2>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>Location</h4>
+      <p>
+        <%= @activity.venue %> <br>
+        <%= @activity.street_address %> <br>
+        <%= @activity.city %>, <%= @activity.state %> <%= @activity.zip %> <br>
+        <%= link_to @activity.website, @activity.website, :target => "_blank" %>
+      </p>
+    </div> <!-- col-xs-6 -->
 
-<p>
-  <strong>Location:</strong> <br>
-  <%= @activity.venue %> <br>
-  <%= @activity.street_address %> <br>
-  <%= @activity.city %>, <%= @activity.state %> <%= @activity.zip %> <br>
-  <%= link_to @activity.website, @activity.website, :target => "_blank" %>
-</p>
+    <div class="col-xs-6">
+      <h4>Description</h4>
+      <p><%= @activity.description %></p>
+    </div> <!-- col-xs-6 -->
+  </div> <!-- row -->
+  
+  <div class="row">  
+    <hr>
+    <h3>Comments</h3>
+    <%= render "comments/comment" %>
+    <hr>
 
-<p>
-  <strong>Description:</strong>
-  <%= @activity.description %>
-</p>
-<hr>
+    <h3>Leave a Comment</h3>
+    <%= render "comments/form" %>
+    <hr>
 
-<h3>Comments</h3>
-<%= render "comments/comment" %>
-<hr>
+    <p>Buttons for this Activity: 
+    <%= link_to 'Edit', edit_activity_path(@activity) %> |
+    <%= link_to 'Back', activities_path %>
+    </p>
 
-<h3>Leave a Comment</h3>
-<%= render "comments/form" %>
-<hr>
+  </div> <!-- col-xs-9 -->
+</div> <!-- row -->
 
-<p>Buttons for this Activity: 
-<%= link_to 'Edit', edit_activity_path(@activity) %> |
-<%= link_to 'Back', activities_path %>
-</p>
+<div class="col-xs-3">
+  <%= render "layouts/sidebar" %> 
+</div> <!-- col-xs-3 -->

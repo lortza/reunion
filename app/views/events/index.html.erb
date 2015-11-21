@@ -1,47 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Events</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Start time</th>
-      <th>End time</th>
-      <th>Venue</th>
-      <th>Street address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip</th>
-      <th>Website</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.date %></td>
-        <td><%= event.start_time %></td>
-        <td><%= event.end_time %></td>
-        <td><%= event.venue %></td>
-        <td><%= event.street_address %></td>
-        <td><%= event.city %></td>
-        <td><%= event.state %></td>
-        <td><%= event.zip %></td>
-        <td><%= event.website %></td>
-        <td><%= event.description %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Event', new_event_path %>
+<%= link_to '+ New Event', new_event_path %>
+<h1>Group Events</h1>
+<p>These are ideas for events that we'll all go to together. </p>
+<% @events.order("date ASC").each do |event| %>
+  <article class="index-listing">
+    <div class="index-buttons">
+      <%= link_to 'Edit', edit_event_path(event) %> |
+      <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure you want to delete #{event.name}? This action cannot be undone.' } %>
+    </div> <!-- index-buttons -->
+    <h2><%= link_to event.name, event %></h2>
+    <p><%= event.date %></p>
+    <p>From <%= event.start_time %> to <%= event.end_time %></p>
+    <p><%= event.description %></p>
+    <p>
+      <strong>Location:</strong> <br>
+      <%= event.venue %> <br>
+      <%= event.street_address %> <br>
+      <%= event.city %>, <%= event.state %> <%= event.zip %> <br>
+      <%= link_to event.website, event.website, :target => "_blank" %>
+    </p>  
+  </article> <!-- index-listing -->
+<% end %>

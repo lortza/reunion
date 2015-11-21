@@ -1,41 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Activities</h1>
+<%= link_to '+ New Activity', new_activity_path %>
+<h1>Area Activities </h1>
+<p>Interesting things to do while you're in the area</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Venue</th>
-      <th>Street address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip</th>
-      <th>Website</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @activities.each do |activity| %>
-      <tr>
-        <td><%= activity.name %></td>
-        <td><%= activity.venue %></td>
-        <td><%= activity.street_address %></td>
-        <td><%= activity.city %></td>
-        <td><%= activity.state %></td>
-        <td><%= activity.zip %></td>
-        <td><%= activity.website %></td>
-        <td><%= activity.description %></td>
-        <td><%= link_to 'Show', activity %></td>
-        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
-        <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Activity', new_activity_path %>
+<% @activities.order("name ASC").each do |activity| %>
+  <article class="col-sm-3 index-listing">
+    <div class="index-buttons">
+      <%= link_to 'Edit', edit_activity_path(activity) %> |
+      <%= link_to 'Delete', activity, method: :delete, data: { confirm: 'Are you sure you want to delete #{activity.name}? This action cannot be undone.' } %>
+    </div> <!-- index-buttons -->
+    <h2><%= link_to activity.name, activity %></h2>
+    <p><%= truncate(activity.description, length: 65, separator: " ") %> <%= link_to "read more", activity, class: "read-more" %></p> 
+  </article> <!-- index-listing -->
+<% end %>

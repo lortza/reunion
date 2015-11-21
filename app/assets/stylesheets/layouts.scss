@@ -1,13 +1,38 @@
+header {
+  margin-bottom: 80px; 
+} /* header */
+  
+
 .sidebar {
-  width: 25%;
   float: right;
-  margin-left: 50px; 
+  padding-left: 1em;
 } /* .sidebar */
 
 .comment, .rsvp {
   .buttons {
      float: right; 
    } /* .buttons */
-      
 } /* .comment */
+
+.index-listing {
+  border: 1pt solid gray;
+  border-radius: 20px;
+  padding: 0 1.5em 1.5em 1em; 
+  margin: 1em;
+  height: 15em;
+  overflow: hidden;
+  float: left;
+    .index-buttons {
+      float: right; 
+      margin: 10px 0px 5px 5px;
+    } /* .index-buttons */
+    .read-more {
+      font-size: 80%;
+      text-transform: uppercase;
+      text-decoration: none; 
+    } /* .read-more a */
+      
+      
+} /* .index-listing */
+
   
