@@ -110,7 +110,8 @@ Activity.create!([
     city: "Greensburg",
     state: "PA",
     zip: "15601",
-    website: "http://website.com"
+    website: "http://website.com",
+    description: "Rent paddle boats or canoes and play in the small lake at Twin Lakes county park."
   },
   {
     name: "Fishing and Big Slide Park Day", 
@@ -119,7 +120,8 @@ Activity.create!([
     city: "Rector",
     state: "PA",
     zip: "15672",
-    website: "http://website.com"
+    website: "http://website.com",
+    description: "Put on your big boys pants and slide down the monster slide that claimed many skinned knees and elbows of our childhood."
   },
   {
     name: "Paintball",
@@ -128,7 +130,8 @@ Activity.create!([
     city: "Greensburg",
     state: "PA",
     zip: "15601",
-    website: "http://website.com"
+    website: "http://website.com",
+    description: "Go blast each other with pain balls. Super fun! Not for the faint of heart."
   },
   {
     name: "Clean out Ray's Garage",
@@ -137,7 +140,8 @@ Activity.create!([
     city: "Greensburg",
     state: "PA",
     zip: "15601",
-    website: "http://website.com"
+    website: "http://website.com",
+    description: "Um, Ray's garage is a wreck and he needs help to move crap out of it and up to the curb."
   },
   {
     name: "Tax-Free Clothing Shopping",
@@ -146,6 +150,7 @@ Activity.create!([
     city: "Greensburg",
     state: "PA",
     zip: "15601",
-    website: "http://website.com"
+    website: "http://website.com",
+    description: "There's no tax on clothing in PA, so go have a field day."
   }
   ])
