@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120020728) do
+ActiveRecord::Schema.define(version: 20151121181314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,5 +55,17 @@ ActiveRecord::Schema.define(version: 20151120020728) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
+
+  create_table "rsvps", force: :cascade do |t|
+    t.string   "name"
+    t.string   "transportation"
+    t.text     "comment"
+    t.integer  "rsvpable_id"
+    t.string   "rsvpable_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "rsvps", ["rsvpable_id", "rsvpable_type"], name: "index_rsvps_on_rsvpable_id_and_rsvpable_type", using: :btree
 
 end
