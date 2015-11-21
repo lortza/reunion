@@ -14,7 +14,11 @@ class ActivitiesController < ApplicationController
     @commentable = @activity
     @comments = @commentable.comments
     @comment = Comment.new
-  end
+
+    @rsvpable = @activity
+    @rsvps = @rsvpable.rsvps
+    @rsvp = Rsvp.new
+  end #show
 
   # GET /activities/new
   def new

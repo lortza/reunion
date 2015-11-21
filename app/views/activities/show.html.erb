@@ -3,6 +3,8 @@
 <h2>
   <%= @activity.name %>
 </h2>
+<%= link_to "Sign Up for #{@activity.name}", [:new, @rsvpable, :rsvp] %>
+<%= render "layouts/sidebar" %>
 
 <p>
   <strong>Location:</strong> <br>

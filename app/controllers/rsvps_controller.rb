@@ -11,7 +11,7 @@ class RsvpsController < ApplicationController
   end
 
   def create
-    @rsvp = @rsvpable.rsvps.new(params[:rsvp])
+    @rsvp = @rsvpable.rsvps.new(rsvp_params)
     if @rsvp.save
       redirect_to @rsvpable, notice: "RSVP created."
     else
