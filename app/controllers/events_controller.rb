@@ -14,6 +14,10 @@ class EventsController < ApplicationController
     @commentable = @event
     @comments = @commentable.comments
     @comment = Comment.new
+
+    @rsvpable = @event
+    @rsvps = @rsvpable.rsvps
+    @rsvp = Rsvp.new
   end
 
   # GET /events/new
