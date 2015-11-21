@@ -1,5 +1,5 @@
 <div class="sidebar">
-  <h3>People Attending</h3>
+  <h3><%= pluralize(@rsvpable.rsvps.count, "Person") %> Attending</h3>
   <%= render "rsvps/rsvp" %>
   <hr>
 
