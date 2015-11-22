@@ -1,7 +1,6 @@
 header {
   margin-bottom: 80px; 
 } /* header */
-  
 
 .sidebar {
   float: right;
@@ -14,6 +13,12 @@ header {
    } /* .buttons */
 } /* .comment */
 
+.edit-link {
+  font-weight: normal;
+  font-size: 50%; 
+  margin-left: 5px;
+} /* .edit-button */
+  
 .index-listing {
   border: 1pt solid gray;
   border-radius: 20px;

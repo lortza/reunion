@@ -40,8 +40,8 @@
     <%= f.text_field :city %>
   </div>
   <div class="field">
-    <%= f.label :state %><br>
-    <%= f.select :state, Event::STATES, prompt: "[Select]"  %>
+    <%= f.label :state_id %><br>
+    <%= f.collection_select :state_id, State.order(:name), :id, :name, prompt: "Choose a State"  %>
   </div>
   <div class="field">
     <%= f.label :zip %><br>
