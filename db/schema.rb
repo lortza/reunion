@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151121181314) do
+ActiveRecord::Schema.define(version: 20151122210405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,13 +21,15 @@ ActiveRecord::Schema.define(version: 20151121181314) do
     t.string   "venue"
     t.string   "street_address"
     t.string   "city"
-    t.string   "state"
     t.string   "zip"
     t.string   "website"
     t.text     "description"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "state_id"
   end
+
+  add_index "activities", ["state_id"], name: "index_activities_on_state_id", using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.string   "name"
@@ -48,13 +50,15 @@ ActiveRecord::Schema.define(version: 20151121181314) do
     t.string   "venue"
     t.string   "street_address"
     t.string   "city"
-    t.string   "state"
     t.string   "zip"
     t.string   "website"
     t.text     "description"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "state_id"
   end
+
+  add_index "events", ["state_id"], name: "index_events_on_state_id", using: :btree
 
   create_table "rsvps", force: :cascade do |t|
     t.string   "name"
@@ -68,4 +72,13 @@ ActiveRecord::Schema.define(version: 20151121181314) do
 
   add_index "rsvps", ["rsvpable_id", "rsvpable_type"], name: "index_rsvps_on_rsvpable_id_and_rsvpable_type", using: :btree
 
+  create_table "states", force: :cascade do |t|
+    t.string   "name"
+    t.string   "abbreviation"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_foreign_key "activities", "states"
+  add_foreign_key "events", "states"
 end
